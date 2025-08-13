@@ -5,7 +5,7 @@
 This project combines a **content-based recommender system** with a **Retrieval-Augmented Generation (RAG)** assistant, purpose-built for the gaming industry.  
 The dataset consists of **self-crawled product data from Amazon’s gaming category**, covering **video games, consoles, and gaming accessories**.  
 
-The system indexes this data in **ElasticSearch**, and the RAG assistant — powered by the **`TheBloke/Llama-2-7B-Chat-GPTQ`** large language model — interprets user queries, retrieves the most relevant product details, and generates context-aware, gaming-specific recommendations.
+The system indexes this data in **ElasticSearch**, and the RAG assistant, powered by the **`TheBloke/Llama-2-7B-Chat-GPTQ`** large language model, interprets user queries, retrieves the most relevant product details, and generates context-aware, gaming-specific recommendations.
 
 By combining **fast search** with **generative reasoning**, the system ensures every suggestion is **accurate, up-to-date, and grounded in real product data**.
 
@@ -35,7 +35,7 @@ By combining **fast search** with **generative reasoning**, the system ensures e
 
 ## 🧠 Why the LLM Matters
 
-Gaming products aren’t one-size-fits-all — preferences depend on **platform, play style, budget, and performance needs**.  
+Gaming products aren’t one-size-fits-all, preferences depend on **platform, play style, budget, and performance needs**.  
 Here, the **LLM** acts as a **gaming domain expert** that:
 
 - Understands **free-form gamer queries** (“Recommend a PS5 headset with 3D audio under $150”)  
@@ -43,7 +43,7 @@ Here, the **LLM** acts as a **gaming domain expert** that:
 - Generates **friendly, helpful answers** that gamers can act on immediately  
 - Tailors results to **gaming-specific criteria** like latency, FPS optimization, or controller ergonomics
 
-This transforms the system into more than just a search tool — it’s a **personal gaming shopping assistant**.
+This transforms the system into more than just a search tool, it’s a **personal gaming shopping assistant**.
 
 ---
 
@@ -51,7 +51,10 @@ This transforms the system into more than just a search tool — it’s a **pers
 
 The assistant is primed with a **system prompt** to enforce consistency and expertise:
 
-SYSTEM: You are a helpful, respectful and honest assistant and expert of game-related products. You know that your goal is to provide accurate, useful, and friendly recommendations for gamers, whether they are looking for hardware, consoles, accessories, or games.
+> **SYSTEM PROMPT**
+> ```
+> You are a helpful, respectful and honest assistant and expert of game-related products. You know that your goal is to provide accurate, useful, and friendly recommendations for gamers, whether they are looking for hardware, consoles, accessories, or games.
+> ```
 
 
 This ensures responses are **gaming-focused** and aligned with the needs of the target audience.
@@ -113,7 +116,6 @@ This ensures responses are **gaming-focused** and aligned with the needs of the 
 
 ## 📈 Future Improvements
 
-- Expand dataset to include **gaming laptops and streaming gear**  
 - Add **price tracking and deal alerts**  
 - Integrate **multimodal search** with product images  
 - Fine-tune LLM on **gaming review text** for even better reasoning  
