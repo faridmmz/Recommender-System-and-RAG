@@ -5,7 +5,7 @@
 This project combines a **content-based recommender system** with a **Retrieval-Augmented Generation (RAG)** assistant, purpose-built for the gaming industry.  
 The dataset consists of **self-crawled product data from Amazon’s gaming category**, covering **video games, consoles, and gaming accessories**.  
 
-The system indexes this data in **ElasticSearch**, and the RAG assistant, powered by the **`TheBloke/Llama-2-7B-Chat-GPTQ`** large language model, interprets user queries, retrieves the most relevant product details, and generates context-aware, gaming-specific recommendations.
+The system indexes this data in **ElasticSearch**, and the RAG assistant, powered by a quantized **`TheBloke/Llama-2-13B-chat-GGML`** large language model running locally via `llama-cpp-python`, interprets user queries, retrieves the most relevant product details, and generates context-aware, gaming-specific recommendations.
 
 By combining **fast search** with **generative reasoning**, the system ensures every suggestion is **accurate, up-to-date, and grounded in real product data**.
 
@@ -66,12 +66,11 @@ This ensures responses are **gaming-focused** and aligned with the needs of the 
 
 - **Languages:** Python  
 - **Search Engine:** ElasticSearch (Cloud Deployment)  
-- **LLM:** [`TheBloke/Llama-2-7B-Chat-GPTQ`](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GPTQ)  
+- **LLM:** [`TheBloke/Llama-2-13B-chat-GGML`](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML), a 5-bit quantized (q5_1) checkpoint run locally  
 - **LLM & NLP Frameworks:**  
-  - HuggingFace Transformers  
-  - Auto-GPTQ for quantized model loading  
-  - SentencePiece for tokenizer handling  
-  - Optimum & Accelerate for optimized inference  
+  - `llama-cpp-python` for local GPU-accelerated inference of the GGML checkpoint  
+  - `sentence-transformers` (`all-MiniLM-L6-v2`) for generating product embeddings  
+  - HuggingFace Hub for model download  
 - **Data Processing:** Pandas, NumPy  
 - **Model Integration:** Retrieval-Augmented Generation pipeline
 
